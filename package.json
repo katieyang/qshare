@@ -1,0 +1,14 @@
+{
+  "name": "qshare",
+  "version": "1.0.0",
+  "description": "queens rideshare",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}

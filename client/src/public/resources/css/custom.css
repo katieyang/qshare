@@ -1,0 +1,269 @@
+body h1,h2,h3,h4{
+	font-family: 'Open Sans', sans-serif;
+}
+body p{
+	font-family: 'Slabo 27px', serif;
+}
+
+
+body{
+	background-image: url("../../img/road_edit.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+    background-position: center 50px;  
+}
+@media (max-width:700px){
+   body{
+   background-image: url("../../img/road2.jpg");
+	
+	background-repeat: no-repeat;
+	
+	background-size: cover;
+    background-position: center 100; 
+   }
+
+}
+#profileImage{
+	width:200px;
+	height: 200px;
+	border-radius: 50%;
+}
+.tag-container p{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.jumbotron{
+	background-color: linen;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+.jumbotron h1,
+.jumbotron img{
+  display:inline-block;
+  vertical-align:middle
+}
+
+.jumbotron img{
+	width:128px; 
+	height:128px;	
+}
+
+.jumbotron .title-container{
+	text-align: center;
+}
+
+.jumbotron .tag-container{
+	position:relative; 
+	margin:auto; 
+	left:0; 
+	right:0;
+	bottom:10px; 
+}
+.jumbotron .tag-container p{
+	z-index: 1;
+	overflow: hidden;
+}
+.jumbotron p:before {
+    position: absolute;
+    top: 51%;
+    overflow: hidden;
+    width: 5%;
+    height: 2px;
+    content: '\a0';
+    background-color: black;
+}
+.jumbotron p:after {
+	position: absolute;
+    top: 51%;
+    overflow: hidden;
+    width: 15%;
+    height: 2px;
+    content: '\a0';
+    background-color: black;
+}
+.jumbotron p:before {
+    margin-left: -5%;
+    text-align: right;
+}
+@media (max-width:769px){
+	.jumbotron p:before {
+		margin-left: 0%;
+		width: 0%;
+	}
+	.jumbotron p:after {
+		width: 0%;
+	}
+}
+@media (max-width:476px){
+	.jumbotron p:before {
+		margin-left: -15%;
+		width: 15%;
+	}
+	.jumbotron p:after {
+		width: 15%;
+	}
+}
+@media (max-width:400px){
+	.jumbotron p:before {
+		margin-left: 0%;
+		width: 0%;
+	}
+	.jumbotron p:after {
+		width: 0%;
+	}
+}
+@media (min-width:477px){
+   .jumbotron .tag-container p{
+		margin-left:100px;
+
+		
+	}
+	.jumbotron .tag-container{
+	bottom:35px;
+	
+	}
+
+}
+@media (min-width:769px){
+
+   .jumbotron .tag-container p{
+		margin-left:0px;
+		font-size: 25px;
+		
+	}
+	.jumbotron .tag-container{
+		bottom:25px;
+	
+	}
+}
+.navbar-fixed{
+    top: 0;
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+	}
+@media (max-width: 767px)
+{
+    .navbar-fixed-top
+    {
+    	position: fixed;
+	    top: 0;
+		width: 100%;
+		z-index: 100000;
+		-webkit-transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+	}
+}
+.navbar-fixed-top{
+  width:100%;
+  background: rgba(0, 0, 0, .60);
+  background-color: powderblue;
+  border-width: 0px;
+  border-color: none;
+}
+
+.fixed-links{
+  padding-right: 16px;
+}
+.navbar-default .navbar-toggle {
+	border-color: black;
+	border-width: 2px;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: black;
+}
+.navbar-collapse{
+	border-width: 0px;
+}
+.navbar{
+  border-width: 0px;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0px;
+  background: rgba(0, 0, 0, 0.15);
+  background-color: powderblue;
+  z-index: 1000;
+  border-radius: 0px;
+}
+.navbar-header{
+  color:black;
+}
+.navbar-custom .navbar-header a{
+  color:black;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  font-size: 18px;
+
+}
+.navbar-custom .navbar-header a:hover,
+.navbar-custom .navbar-header a:active,
+.navbar-custom .navbar-header a:focus
+{
+  color:darkgreen;
+  font-size: 22px;
+}
+.navbar-custom .navbar-toggle:hover,
+.navbar-custom .navbar-toggle:focus,
+{
+  background-color: blue;
+  font-size:22px;
+}
+.navbar-custom .navbar-nav li a
+{
+  color:black;
+}
+#linkList{
+	font-size: 18px;
+}
+.navbar-custom .navbar-nav li a:hover,
+.navbar-custom .navbar-nav li a:active,
+.navbar-custom .navbar-nav li a:focus
+{
+  color:darkgreen;
+  font-size:22px;
+}
+
+#profile{
+	background-color: linen;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	overflow: hidden;
+}
+#post{
+	background-color: lightcoral;
+	    margin-top: -20;
+}
+#rides{
+	margin-bottom: -20px;
+	overflow: hidden;
+	background-color: linen;
+}
+#request{
+	background-color: lightcoral;
+	height: 300px;
+
+}
+
+#contact{
+	background-color: linen;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	position: relative;
+	bottom:0px;
+	width: 100%;
+}
+.desc{
+	position: relative;
+	top:40px;
+    background-color: white;
+    /*border-radius: 15px;*/
+    box-shadow: 10px 10px 10px #888888;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-style:italic;
+    font-size: 40px;
+    width: 100%;
+    height: 60px;
+  }
+
