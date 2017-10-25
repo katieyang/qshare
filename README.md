@@ -1,2 +1,2 @@
-# qshare_local
-Local testing project for qshare.
+# qshare
+GitHub Repo for qshare QTMA project.
