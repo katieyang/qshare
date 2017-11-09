@@ -42,6 +42,12 @@ body{
   display: inline-block;
 }
 </style>
+<!-- Form Submit Script -->
+<script>
+      function submitForm(){
+        console.log("Form Submitted");
+      }
+</script>
 
 </head>
 <body>
@@ -212,11 +218,12 @@ body{
 </section>
 
 <section id = "post">
+
      <h2 style = "padding-top: 20px;" class = "text-center">Post a Ride!</h2>
      <div class = "container-fluid">
      <div class = "row">
      <!-- Post Form -->
-    <form action="rideadded.php" method="post">
+    <form onSubmit="return submitForm()">
     <div class = "col-xs-12 col-sm-6">
       <div class="form-group">
       <label for="ridecapacity">Seats Available</label>
