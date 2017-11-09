@@ -316,7 +316,7 @@ body{
               <img class="md-avatar" ng-src = "{{x.ProfilePicture}}">
               <div class="md-list-item-text">
                 <span><h3>{{ x.name }}</h3></span> 
-                <p><b>{{ x.date }}</b></p>
+                <p><b>{{ x.readableDate }}</b></p>
                 <p><b>Price: ${{x.price}}</b></p>
                 <p><b>Capacity: {{x.capacity}}</b></p>
               </div>
@@ -391,7 +391,9 @@ body{
 
   app.controller('rideCtrl', ['$scope', '$http',function($scope,$http){
 
-  $http.get('/rides').then(
+
+
+  $http.get('/api/rides').then(
       function (response) {
         if(response){ 
           console.log("Response received");
@@ -500,8 +502,6 @@ app.filter('startFrom', function() {
     }
 });
 </script>
-
-
 
 <!-- Custom JS -->
 <script src = "resources/js/custom.js"></script>
