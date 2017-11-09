@@ -315,14 +315,14 @@ body{
             <md-list-item class="md-3-line" ng-repeat="x in names | oFilter | dFilter | startFrom:currentPage*pageSize | limitTo:pageSize" ng-click="null" style = "height: 100px;">
               <img class="md-avatar" ng-src = "{{x.ProfilePicture}}">
               <div class="md-list-item-text">
-                <span><h3>{{ x.Name }}</h3></span> 
-                <p><b>{{ x.Date }}</b></p>
-                <p><b>Price: ${{x.Price}}</b></p>
-                <p><b>Capacity: {{x.Capacity}}</b></p>
+                <span><h3>{{ x.name }}</h3></span> 
+                <p><b>{{ x.date }}</b></p>
+                <p><b>Price: ${{x.price}}</b></p>
+                <p><b>Capacity: {{x.capacity}}</b></p>
               </div>
               <div class="md-list-item-text md-secondary" layout="row">
-                <p>From: <b> {{ x.Origin }} </b></p>
-                <p>To: <b>{{ x.Destination }}</b></p>
+                <p>From: <b> {{ x.origin }} </b></p>
+                <p>To: <b>{{ x.destination }}</b></p>
               </div>
               <md-divider></md-divider>
             </md-list-item>
@@ -391,16 +391,20 @@ body{
 
   app.controller('rideCtrl', ['$scope', '$http',function($scope,$http){
 
-  $http.get("angularFilter.php").then(
+  $http.get('/rides').then(
       function (response) {
-        $scope.names = response.data.records;
-
-        
+        if(response){ 
+          console.log("Response received");
+          console.log(response);
+          }
+        else {console.log("No Response")};
+        $scope.names = response.data;
+        console.log($scope.names);
         //Get array of all Origin strings 
         originArray = [];
         uniqueOrigins = [];
-        for (i = 0; i < response.data.records.length; i++){
-        originArray[i] = response.data.records[i]["Origin"];
+        for (i = 0; i < response.data.length; i++){
+        originArray[i] = response.data[i]["origin"];
         }
         //Remove duplicates
         $.each(originArray, function(i, el){
@@ -411,8 +415,8 @@ body{
         //Repeat process for Destinations
         destinationArray = [];
         uniqueDestination = [];
-        for (i = 0; i < response.data.records.length; i++){
-        destinationArray[i] = response.data.records[i]["Destination"];
+        for (i = 0; i < response.data.length; i++){
+        destinationArray[i] = response.data[i]["destination"];
         }
         //Remove duplicates
         $.each(destinationArray, function(i, el){
@@ -437,7 +441,7 @@ body{
         $scope.currentPage = 0;
         $scope.pageSize = 5;
         $scope.numberOfPages= function(){
-        return Math.ceil(response.data.records.length/$scope.pageSize);                
+        return Math.ceil(response.data.length/$scope.pageSize);                
     }
         console.log(response);
       },

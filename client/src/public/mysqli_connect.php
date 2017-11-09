@@ -1,7 +1,7 @@
 
 <?php
   #Opens a connection to the mySQL database
-  
+  console.log("Inside connect script");
   DEFINE ('DB_USER', 'team_a'); # User name that you use to enter database 
   DEFINE ('DB_PASSWORD', 'qtma_qshare'); # Password used for the database
   DEFINE ('DB_HOST', 'qshare-mysql.cbdnvr3ldjvu.ca-central-1.rds.amazonaws.com'); # The server that the connection to mySQL is coming from

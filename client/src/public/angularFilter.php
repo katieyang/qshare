@@ -2,6 +2,8 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
+
+
 require_once('mysqli_connect.php');
 
 $query = "SELECT rideid, destination, price, capacity, userid, origin, departDate, vehicle, name FROM rides";
