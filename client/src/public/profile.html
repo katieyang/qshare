@@ -398,14 +398,12 @@ body{
 
   app.controller('rideCtrl', ['$scope', '$http',function($scope,$http){
 
-
-
   $http.get('/api/rides').then(
       function (response) {
         if(response){ 
           console.log("Response received");
           console.log(response);
-          }
+        }
         else {console.log("No Response")};
         $scope.names = response.data;
         console.log($scope.names);
@@ -499,7 +497,7 @@ angular.module('rideApp').filter('dFilter', function() {
     };
 });
 
-  //We already have a limitTo filter built-in to angular,
+//We already have a limitTo filter built-in to angular,
 //let's make a startFrom filter
 app.filter('startFrom', function() {
     return function(input, start) {
