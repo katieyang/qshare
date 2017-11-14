@@ -15,14 +15,14 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <!--Custom CSS link -->
 <link href = "resources/css/custom.css" rel = "stylesheet">
-<link rel="icon" 
-      type="image/png" 
+<link rel="icon"
+      type="image/png"
       href="img/logo_green.png">
 <!--Google Fonts-->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Orbitron|Slabo+27px" rel="stylesheet">
 <!-- Angular Material Stylesheet -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.0-rc2/angular-material.min.css">
-<!-- Include jQuery 
+<!-- Include jQuery
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
 <!-- jQuery -->
 <script src="resources/js/jquery-3.2.1.js"></script>
@@ -70,7 +70,7 @@ body{
     }
     else{
     	testAPI();
-    } 
+    }
   }
 
   // This function is called when someone finishes with the Login
@@ -85,13 +85,13 @@ body{
   window.fbAsyncInit = function() {
   FB.init({
     appId      : '152331278836309',
-    cookie     : true,  // enable cookies to allow the server to access 
+    cookie     : true,  // enable cookies to allow the server to access
                         // the session
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.8' // use graph api version 2.8
   });
 
-  // Now that we've initialized the JavaScript SDK, we call 
+  // Now that we've initialized the JavaScript SDK, we call
   // FB.getLoginStatus().  This function gets the state of the
   // person visiting this page and can return one of three states to
   // the callback you provide.  They can be:
@@ -133,7 +133,7 @@ body{
 
   function getFBData () {
   FB.api('/me',{fields: 'name,email'}, function(response) {
-  
+
   fbinfo[0] = response.id;
   fbinfo[1] = response.first_name;
   fbinfo[2] = response.last_name;
@@ -142,22 +142,22 @@ body{
      var im = document.getElementById("profileImage").setAttribute("src", "http://graph.facebook.com/" + response.id + "/picture?type=large");
      document.getElementById('userInfo').innerHTML =
         '<h4>User ID: ' + response.id + '<br>'+'User Email: ' +response.email+'</h4>';
-     document.getElementById("userid").value = response.id; 
-   
+     document.getElementById("userid").value = response.id;
+
   });
   }
 </script>
 <!--END FACEBOOK JAVASCRIPT SDK -->
 <div class = "jumbotron" id = "jumbo">
 	<div class = "container-fluid">
-		
+
   			<div class = "title-container">
           <img src = "img/queens_logo.png">
   				<h1>Queen's Rideshare</h1>
         </div>
 
         <div class = "tag-container text-center">
-            <p>Safe. Reliable. Eco-Friendly.</p>
+            <p>Safe. Reliable. Super Eco-Friendly.</p>
         </div>
 	</div>
 </div>
@@ -177,7 +177,7 @@ body{
                 </button>
             <a class = "navbar-brand XX" href = "#jumbo"><i>Qshare</i></a>
             </div>
-          
+
              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style = "z-index: 100000;">
               <ul class = "nav navbar-nav navbar-right" id = "linkList">
                 <li ><a href="#profile" class = "XX">Profile</a></li>
@@ -271,13 +271,13 @@ body{
         <input type="hidden" id="dtp_input" name = "dtp_input" value="" /><br/>
       </div>
     </div>
-  
-    
+
+
     <input type="hidden" id = "userid" name = "userid">
     <input type = "hidden" id = "userName" name = "userName">
 
     </div><!--End Row-->
-    
+
 
 
      <!-- <tr>
@@ -306,10 +306,10 @@ body{
 
      <!-- Ride Table -->
      <div id = 'RideTable' ng-app = "rideApp" ng-controller= "rideCtrl">
-    
+
       <!-- From / To Filter below -->
       <div class = "container">
-        
+
             <h4><u>Filter Location</u></h4>
 
             <p class="filters">From:&nbsp;</p><select ng-change="changeOrigin(select1)" ng-model="select1" ng-options="city for city in originSelect"><option value="">All</option></select>
@@ -334,7 +334,7 @@ body{
               <md-divider></md-divider>
             </md-list-item>
           <!--Pagination-->
-          <section layout="row" layout-sm="column" layout-align="center center" layout-wrap=""> 
+          <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
             <md-button md-no-ink="" class="md-primary" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">Previous</md-button>
             </md-button>
             {{currentPage+1}}/{{numberOfPages()}}
@@ -343,7 +343,7 @@ body{
             </md-button>
           </section>
           </md-list>
-     
+
      </div>
      <!-- End Ride Table -->
 </section>
@@ -358,7 +358,7 @@ body{
 
 <!--Footer / Contact Us!-->
 <div class = "container-fluid" id="contact">
-    
+
       <div class = "row">
         <div class = "col-sm-12">
           <h3 class = "text-center">Contact Us</h3>
@@ -368,10 +368,10 @@ body{
             <li><b>Evgeny Bogdanov</b> - Junior Developer: <a href="mailto:15eb30@queensu.ca"  style = "color:blue;"><u>15eb30@queensu.ca</u> <i style = "color:black;" class="fa fa-envelope-o fa-fw"></i></a> </li>
             <li><b>Elaine Gao</b> - Product Manager: <a href="mailto:16eg1@queensu.ca"  style = "color:blue;"><u>16eg1@queensu.ca</u> <i style = "color:black;" class="fa fa-envelope-o fa-fw"></i></a> </li>
           </ul>
-        </div>      
+        </div>
       </div>
-    
-</div> 
+
+</div>
 <!-- Date and time picker script -->
 <script type="text/javascript">
   $('.form_datetime').datetimepicker({
@@ -400,6 +400,7 @@ body{
 
   $http.get('/api/rides').then(
       function (response) {
+
         if(response){ 
           console.log("Response received");
           console.log(response);
@@ -418,7 +419,7 @@ body{
         if($.inArray(el, uniqueOrigins) === -1) uniqueOrigins.push(el);
         });
         $scope.originSelect = uniqueOrigins;
-        
+
         //Repeat process for Destinations
         destinationArray = [];
         uniqueDestination = [];
@@ -436,18 +437,19 @@ body{
 
         //-------------------- More Filter Stuff ----------------------
         //changeOrigin is the function that executes when the drop-down menu option is changed
-        $scope.changeOrigin = function(city){ 
+        $scope.changeOrigin = function(city){
           originFilter = city;
         }
         //same as above but for changes in destination drop-down menu option
         $scope.changeDestination = function(city){
           destinationFilter = city;
-        }  
+        }
 
         //Pagination Stuff
         $scope.currentPage = 0;
         $scope.pageSize = 5;
         $scope.numberOfPages= function(){
+
         return Math.ceil(response.data.length/$scope.pageSize);                
     }
         console.log(response);
@@ -484,7 +486,7 @@ angular.module('rideApp').filter('oFilter', function() {
 
 // same as above but for destination
 angular.module('rideApp').filter('dFilter', function() {
-  
+
     return function(rides) {
       if(!rides) return;
       var filtered = [];
