@@ -11,16 +11,16 @@ body{
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%;
-    background-position: center 50px;  
+    background-position: center 50px;
 }
 @media (max-width:700px){
    body{
    background-image: url("../../img/road2.jpg");
-	
+
 	background-repeat: no-repeat;
-	
+
 	background-size: cover;
-    background-position: center 100; 
+    background-position: center 100;
    }
 
 }
@@ -46,8 +46,8 @@ body{
 }
 
 .jumbotron img{
-	width:128px; 
-	height:128px;	
+	width:128px;
+	height:128px;
 }
 
 .jumbotron .title-container{
@@ -55,87 +55,40 @@ body{
 }
 
 .jumbotron .tag-container{
-	position:relative; 
-	margin:auto; 
-	left:0; 
+	position:relative;
+	margin:auto;
+	left:0;
 	right:0;
-	bottom:10px; 
+	bottom:10px;
 }
 .jumbotron .tag-container p{
 	z-index: 1;
 	overflow: hidden;
 }
-.jumbotron p:before {
-    position: absolute;
-    top: 51%;
-    overflow: hidden;
-    width: 5%;
-    height: 2px;
-    content: '\a0';
-    background-color: black;
-}
-.jumbotron p:after {
-	position: absolute;
-    top: 51%;
-    overflow: hidden;
-    width: 15%;
-    height: 2px;
-    content: '\a0';
-    background-color: black;
-}
-.jumbotron p:before {
-    margin-left: -5%;
-    text-align: right;
-}
-@media (max-width:769px){
-	.jumbotron p:before {
-		margin-left: 0%;
-		width: 0%;
-	}
-	.jumbotron p:after {
-		width: 0%;
-	}
-}
-@media (max-width:476px){
-	.jumbotron p:before {
-		margin-left: -15%;
-		width: 15%;
-	}
-	.jumbotron p:after {
-		width: 15%;
-	}
-}
-@media (max-width:400px){
-	.jumbotron p:before {
-		margin-left: 0%;
-		width: 0%;
-	}
-	.jumbotron p:after {
-		width: 0%;
-	}
-}
+
 @media (min-width:477px){
    .jumbotron .tag-container p{
-		margin-left:100px;
+		margin-left:140px;
+		font-size: 20px;
 
-		
+
 	}
 	.jumbotron .tag-container{
 	bottom:35px;
-	
+
 	}
 
 }
 @media (min-width:769px){
 
    .jumbotron .tag-container p{
-		margin-left:0px;
+		margin-left:80px;
 		font-size: 25px;
-		
+
 	}
 	.jumbotron .tag-container{
 		bottom:25px;
-	
+
 	}
 }
 .navbar-fixed{
@@ -266,4 +219,3 @@ body{
     width: 100%;
     height: 60px;
   }
-
