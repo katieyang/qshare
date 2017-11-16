@@ -30,7 +30,9 @@ router.get('/rides', (req,res,next)=>{
 });
 
 router.post('/rides', (req,res,next)=>{
-	
+	console.log("Inside rides post endpoint");
+	console.log(req.body);
+	res.send("Attempt made to post to DB");
 });
 
 module.exports = router;
