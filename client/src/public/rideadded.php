@@ -66,13 +66,13 @@
         $affected_rows = mysqli_stmt_affected_rows($stmt);
 
         if($affected_rows == 1){
-          
+
           echo "Ride Entered - ID: ".$userid."<br />";
 
           mysqli_stmt_close($stmt);
           mysqli_close($dbc);
         } else {
-          
+
           echo "Affected Rows: ".$affected_rows."</br>";
           echo 'Error Found: <br />';
           echo mysqli_error();
@@ -90,9 +90,9 @@
 ?>
 
 <script>
-  
+
   setTimeout(redirectProfile, 100);
- 
+
   function redirectProfile() {
   window.top.location = "http://test.qshare.ca/profile.html#rides";
   }

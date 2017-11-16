@@ -218,7 +218,7 @@ body{
      <div class = "container-fluid">
      <div class = "row">
      <!-- Post Form -->
-    <form method = "post" action = "/api/rides">
+    <form action="/" id = "rideForm">
     <div class = "col-xs-12 col-sm-6">
       <div class="form-group">
       <label for="ridecapacity">Seats Available</label>
@@ -317,7 +317,7 @@ body{
             <md-list-item class="md-3-line" ng-repeat="x in names | oFilter | dFilter | startFrom:currentPage*pageSize | limitTo:pageSize" ng-click="null" style = "height: 100px;">
               <img class="md-avatar" ng-src = "{{x.ProfilePicture}}">
               <div class="md-list-item-text">
-                <span><h3>{{ x.name }}</h3></span> 
+                <span><h3>{{ x.name }}</h3></span>
                 <p><b>{{ x.readableDate }}</b></p>
                 <p><b>Price: ${{x.price}}</b></p>
                 <p><b>Capacity: {{x.capacity}}</b></p>
@@ -396,14 +396,14 @@ body{
   $http.get('/api/rides').then(
       function (response) {
 
-        if(response){ 
+        if(response){
           console.log("Response received");
           console.log(response);
         }
         else {console.log("No Response")};
         $scope.names = response.data;
         console.log($scope.names);
-        //Get array of all Origin strings 
+        //Get array of all Origin strings
         originArray = [];
         uniqueOrigins = [];
         for (i = 0; i < response.data.length; i++){
@@ -445,7 +445,7 @@ body{
         $scope.pageSize = 5;
         $scope.numberOfPages= function(){
 
-        return Math.ceil(response.data.length/$scope.pageSize);                
+        return Math.ceil(response.data.length/$scope.pageSize);
     }
         console.log(response);
       },

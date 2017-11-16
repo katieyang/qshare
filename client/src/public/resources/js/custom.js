@@ -1,12 +1,37 @@
 $(document).ready(function() {
+
+//Handle User Form input
+$(function() {
+    $('#rideForm').submit(function(event) {
+        event.preventDefault(); // Stops browser from navigating away from page
+        var data = {};
+        var data = {
+          ridecapacity: document.querySelector("#ridecapacity").value,
+          origin: document.querySelector("#origin").value,
+          rideprice: document.querySelector("#rideprice").value,
+          destination: document.querySelector("#ridedestination").value,
+          date: document.querySelector("#dtp_input").value,
+          userid: document.querySelector("#userid").value,
+          username: document.querySelector("#userName").value
+        }
+        console.log("Sending Data to server:");
+        console.log(data);
+        // build a json object or do something with the form, store in data
+        $.post('/api/rides', data, function(resp) {
+            alert(resp);
+            // do something when it was successful
+            console.log(resp);
+        });
+    });
+});
 // Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a').click(function(){ 
+$('.navbar-collapse ul li a').click(function(){
         $('.navbar-toggle:visible').click();
 });
-  
+
   $(window).scroll(function () {
       //if you hard code, then use console
-      //.log to determine when you want the 
+      //.log to determine when you want the
       var d = $('#jumbo');
     if ($(window).scrollTop() > d.prop("scrollHeight") ) {
       $('#nav_bar').addClass('navbar-fixed-top');
