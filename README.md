@@ -7,3 +7,5 @@ GitHub Repo for qshare QTMA project.
 - dev represents local testing environment
 - master represents live http://qshare.ca
 
+## Test Change with Katie
+
