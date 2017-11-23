@@ -430,16 +430,6 @@ body{
         console.log("Origins: \n" + $scope.originSelect);
         console.log("Destination: \n" + $scope.destinationSelect);
 
-        //-------------------- More Filter Stuff ----------------------
-        //changeOrigin is the function that executes when the drop-down menu option is changed
-        $scope.changeOrigin = function(city){
-          originFilter = city;
-        }
-        //same as above but for changes in destination drop-down menu option
-        $scope.changeDestination = function(city){
-          destinationFilter = city;
-        }
-
         //Pagination Stuff
         $scope.currentPage = 0;
         $scope.pageSize = 5;
@@ -455,6 +445,15 @@ body{
 
         );
 
+        //-------------------- More Filter Stuff ----------------------
+        //changeOrigin is the function that executes when the drop-down menu option is changed
+        $scope.changeOrigin = function(city){
+          originFilter = city;
+        }
+        //same as above but for changes in destination drop-down menu option
+        $scope.changeDestination = function(city){
+          destinationFilter = city;
+        }
 
 }]);//end scope
 
@@ -471,7 +470,7 @@ angular.module('rideApp').filter('oFilter', function() {
       var filtered = [];
       //loop through and add ride to filtered if originFilter is null or the Origin of the ride matches the originFilter
       for(var i = 0; i < rides.length; i++){
-        if (originFilter === null || rides[i].Origin === originFilter) {
+        if (originFilter === null || rides[i].origin === originFilter) {
           filtered.push(rides[i]);
         }
       }
@@ -486,7 +485,7 @@ angular.module('rideApp').filter('dFilter', function() {
       if(!rides) return;
       var filtered = [];
       for(var i = 0; i < rides.length; i++){
-        if (destinationFilter === null || rides[i].Destination === destinationFilter) {
+        if (destinationFilter === null || rides[i].destination === destinationFilter) {
           filtered.push(rides[i]);
         }
       }
